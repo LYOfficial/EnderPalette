@@ -777,20 +777,6 @@
     "image": ""
   },
   {
-    "id": "water",
-    "name": "Water",
-    "nameCn": "水",
-    "hex": "#3f76e4",
-    "image": "Water.png"
-  },
-  {
-    "id": "lava",
-    "name": "Lava",
-    "nameCn": "岩浆",
-    "hex": "#f1761d",
-    "image": "Lava.png"
-  },
-  {
     "id": "ice",
     "name": "Ice",
     "nameCn": "冰",
@@ -1768,34 +1754,6 @@
     "name": "Moss Block",
     "nameCn": "苔藓块",
     "hex": "#586c2e",
-    "image": ""
-  },
-  {
-    "id": "glow_lichen",
-    "name": "Glow Lichen",
-    "nameCn": "发光地衣",
-    "hex": "#7bb7a6",
-    "image": ""
-  },
-  {
-    "id": "lantern",
-    "name": "Lantern",
-    "nameCn": "灯笼",
-    "hex": "#f7cf6a",
-    "image": ""
-  },
-  {
-    "id": "soul_lantern",
-    "name": "Soul Lantern",
-    "nameCn": "灵魂灯笼",
-    "hex": "#57b7b3",
-    "image": ""
-  },
-  {
-    "id": "end_rod",
-    "name": "End Rod",
-    "nameCn": "末地烛",
-    "hex": "#f4e8d6",
     "image": ""
   },
   {
