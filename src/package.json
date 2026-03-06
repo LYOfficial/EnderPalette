@@ -1,0 +1,14 @@
+{
+  "name": "enderpalette",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "EnderPalette (末地调色盘) - Minecraft palette analyzer",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

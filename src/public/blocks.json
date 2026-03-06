@@ -1,0 +1,1731 @@
+[
+  {
+    "id": "grass_block",
+    "name": "Grass Block",
+    "nameCn": "草方块",
+    "hex": "#7fb238",
+    "image": "Grass_Block.png"
+  },
+  {
+    "id": "dirt",
+    "name": "Dirt",
+    "nameCn": "泥土",
+    "hex": "#866043",
+    "image": "Dirt.png"
+  },
+  {
+    "id": "coarse_dirt",
+    "name": "Coarse Dirt",
+    "nameCn": "砂土",
+    "hex": "#7a5a3b",
+    "image": ""
+  },
+  {
+    "id": "rooted_dirt",
+    "name": "Rooted Dirt",
+    "nameCn": "缠根泥土",
+    "hex": "#7a5a3b",
+    "image": ""
+  },
+  {
+    "id": "mud",
+    "name": "Mud",
+    "nameCn": "泥巴",
+    "hex": "#4a3a2e",
+    "image": ""
+  },
+  {
+    "id": "packed_mud",
+    "name": "Packed Mud",
+    "nameCn": "压实泥土",
+    "hex": "#8b6b5a",
+    "image": ""
+  },
+  {
+    "id": "mud_bricks",
+    "name": "Mud Bricks",
+    "nameCn": "泥砖",
+    "hex": "#8a6b5a",
+    "image": ""
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "nameCn": "黏土",
+    "hex": "#a8b1c1",
+    "image": ""
+  },
+  {
+    "id": "gravel",
+    "name": "Gravel",
+    "nameCn": "沙砾",
+    "hex": "#7a7a7a",
+    "image": ""
+  },
+  {
+    "id": "sand",
+    "name": "Sand",
+    "nameCn": "沙子",
+    "hex": "#dbd3a0",
+    "image": "Sand.png"
+  },
+  {
+    "id": "red_sand",
+    "name": "Red Sand",
+    "nameCn": "红沙",
+    "hex": "#b26a3b",
+    "image": "Red_Sand.png"
+  },
+  {
+    "id": "stone",
+    "name": "Stone",
+    "nameCn": "石头",
+    "hex": "#7f7f7f",
+    "image": "Stone.png"
+  },
+  {
+    "id": "granite",
+    "name": "Granite",
+    "nameCn": "花岗岩",
+    "hex": "#9b6b5a",
+    "image": ""
+  },
+  {
+    "id": "polished_granite",
+    "name": "Polished Granite",
+    "nameCn": "磨制花岗岩",
+    "hex": "#a67b68",
+    "image": ""
+  },
+  {
+    "id": "diorite",
+    "name": "Diorite",
+    "nameCn": "闪长岩",
+    "hex": "#dcdcdc",
+    "image": ""
+  },
+  {
+    "id": "polished_diorite",
+    "name": "Polished Diorite",
+    "nameCn": "磨制闪长岩",
+    "hex": "#e3e3e3",
+    "image": ""
+  },
+  {
+    "id": "andesite",
+    "name": "Andesite",
+    "nameCn": "安山岩",
+    "hex": "#8b8b8b",
+    "image": ""
+  },
+  {
+    "id": "polished_andesite",
+    "name": "Polished Andesite",
+    "nameCn": "磨制安山岩",
+    "hex": "#9e9e9e",
+    "image": ""
+  },
+  {
+    "id": "cobblestone",
+    "name": "Cobblestone",
+    "nameCn": "圆石",
+    "hex": "#6b6b6b",
+    "image": "Cobblestone.png"
+  },
+  {
+    "id": "stone_bricks",
+    "name": "Stone Bricks",
+    "nameCn": "石砖",
+    "hex": "#7a7a7a",
+    "image": ""
+  },
+  {
+    "id": "mossy_stone_bricks",
+    "name": "Mossy Stone Bricks",
+    "nameCn": "苔石砖",
+    "hex": "#6f7f6a",
+    "image": ""
+  },
+  {
+    "id": "cracked_stone_bricks",
+    "name": "Cracked Stone Bricks",
+    "nameCn": "裂纹石砖",
+    "hex": "#7c7c7c",
+    "image": ""
+  },
+  {
+    "id": "chiseled_stone_bricks",
+    "name": "Chiseled Stone Bricks",
+    "nameCn": "錾制石砖",
+    "hex": "#777777",
+    "image": ""
+  },
+  {
+    "id": "bricks",
+    "name": "Bricks",
+    "nameCn": "红砖块",
+    "hex": "#a35a4a",
+    "image": ""
+  },
+  {
+    "id": "deepslate",
+    "name": "Deepslate",
+    "nameCn": "深板岩",
+    "hex": "#4b4b4b",
+    "image": ""
+  },
+  {
+    "id": "cobbled_deepslate",
+    "name": "Cobbled Deepslate",
+    "nameCn": "深板岩圆石",
+    "hex": "#4a4a4a",
+    "image": ""
+  },
+  {
+    "id": "polished_deepslate",
+    "name": "Polished Deepslate",
+    "nameCn": "磨制深板岩",
+    "hex": "#4f4f4f",
+    "image": ""
+  },
+  {
+    "id": "deepslate_bricks",
+    "name": "Deepslate Bricks",
+    "nameCn": "深板岩砖",
+    "hex": "#4a4646",
+    "image": ""
+  },
+  {
+    "id": "cracked_deepslate_bricks",
+    "name": "Cracked Deepslate Bricks",
+    "nameCn": "裂纹深板岩砖",
+    "hex": "#444444",
+    "image": ""
+  },
+  {
+    "id": "deepslate_tiles",
+    "name": "Deepslate Tiles",
+    "nameCn": "深板岩瓦",
+    "hex": "#3f3f3f",
+    "image": ""
+  },
+  {
+    "id": "cracked_deepslate_tiles",
+    "name": "Cracked Deepslate Tiles",
+    "nameCn": "裂纹深板岩瓦",
+    "hex": "#3a3a3a",
+    "image": ""
+  },
+  {
+    "id": "chiseled_deepslate",
+    "name": "Chiseled Deepslate",
+    "nameCn": "錾制深板岩",
+    "hex": "#3c3c3c",
+    "image": ""
+  },
+  {
+    "id": "tuff",
+    "name": "Tuff",
+    "nameCn": "凝灰岩",
+    "hex": "#6d6a5e",
+    "image": ""
+  },
+  {
+    "id": "polished_tuff",
+    "name": "Polished Tuff",
+    "nameCn": "磨制凝灰岩",
+    "hex": "#7a7568",
+    "image": ""
+  },
+  {
+    "id": "tuff_bricks",
+    "name": "Tuff Bricks",
+    "nameCn": "凝灰岩砖",
+    "hex": "#6f6b60",
+    "image": ""
+  },
+  {
+    "id": "chiseled_tuff",
+    "name": "Chiseled Tuff",
+    "nameCn": "錾制凝灰岩",
+    "hex": "#6a665b",
+    "image": ""
+  },
+  {
+    "id": "sandstone",
+    "name": "Sandstone",
+    "nameCn": "砂岩",
+    "hex": "#d9d0a3",
+    "image": ""
+  },
+  {
+    "id": "smooth_sandstone",
+    "name": "Smooth Sandstone",
+    "nameCn": "光滑砂岩",
+    "hex": "#e5d8a6",
+    "image": ""
+  },
+  {
+    "id": "cut_sandstone",
+    "name": "Cut Sandstone",
+    "nameCn": "切制砂岩",
+    "hex": "#d8cf9a",
+    "image": ""
+  },
+  {
+    "id": "chiseled_sandstone",
+    "name": "Chiseled Sandstone",
+    "nameCn": "錾制砂岩",
+    "hex": "#d7c890",
+    "image": ""
+  },
+  {
+    "id": "red_sandstone",
+    "name": "Red Sandstone",
+    "nameCn": "红砂岩",
+    "hex": "#b7653c",
+    "image": ""
+  },
+  {
+    "id": "smooth_red_sandstone",
+    "name": "Smooth Red Sandstone",
+    "nameCn": "光滑红砂岩",
+    "hex": "#c46b3c",
+    "image": ""
+  },
+  {
+    "id": "cut_red_sandstone",
+    "name": "Cut Red Sandstone",
+    "nameCn": "切制红砂岩",
+    "hex": "#b85d32",
+    "image": ""
+  },
+  {
+    "id": "chiseled_red_sandstone",
+    "name": "Chiseled Red Sandstone",
+    "nameCn": "錾制红砂岩",
+    "hex": "#b76037",
+    "image": ""
+  },
+  {
+    "id": "prismarine",
+    "name": "Prismarine",
+    "nameCn": "海晶石",
+    "hex": "#6aa89f",
+    "image": ""
+  },
+  {
+    "id": "prismarine_bricks",
+    "name": "Prismarine Bricks",
+    "nameCn": "海晶石砖",
+    "hex": "#5aa09a",
+    "image": ""
+  },
+  {
+    "id": "dark_prismarine",
+    "name": "Dark Prismarine",
+    "nameCn": "暗海晶石",
+    "hex": "#2a7a7a",
+    "image": ""
+  },
+  {
+    "id": "nether_bricks",
+    "name": "Nether Bricks",
+    "nameCn": "下界砖块",
+    "hex": "#4f2322",
+    "image": ""
+  },
+  {
+    "id": "red_nether_bricks",
+    "name": "Red Nether Bricks",
+    "nameCn": "红色下界砖块",
+    "hex": "#6f2b2a",
+    "image": ""
+  },
+  {
+    "id": "cracked_nether_bricks",
+    "name": "Cracked Nether Bricks",
+    "nameCn": "裂纹下界砖块",
+    "hex": "#5b2a28",
+    "image": ""
+  },
+  {
+    "id": "chiseled_nether_bricks",
+    "name": "Chiseled Nether Bricks",
+    "nameCn": "錾制下界砖块",
+    "hex": "#5a2a29",
+    "image": ""
+  },
+  {
+    "id": "blackstone",
+    "name": "Blackstone",
+    "nameCn": "黑石",
+    "hex": "#2b2b2b",
+    "image": ""
+  },
+  {
+    "id": "polished_blackstone",
+    "name": "Polished Blackstone",
+    "nameCn": "磨制黑石",
+    "hex": "#2f2f2f",
+    "image": ""
+  },
+  {
+    "id": "polished_blackstone_bricks",
+    "name": "Polished Blackstone Bricks",
+    "nameCn": "磨制黑石砖",
+    "hex": "#333333",
+    "image": ""
+  },
+  {
+    "id": "cracked_polished_blackstone_bricks",
+    "name": "Cracked Polished Blackstone Bricks",
+    "nameCn": "裂纹磨制黑石砖",
+    "hex": "#2a2a2a",
+    "image": ""
+  },
+  {
+    "id": "chiseled_polished_blackstone",
+    "name": "Chiseled Polished Blackstone",
+    "nameCn": "錾制磨制黑石",
+    "hex": "#303030",
+    "image": ""
+  },
+  {
+    "id": "gilded_blackstone",
+    "name": "Gilded Blackstone",
+    "nameCn": "镶金黑石",
+    "hex": "#4a3b2a",
+    "image": ""
+  },
+  {
+    "id": "basalt",
+    "name": "Basalt",
+    "nameCn": "玄武岩",
+    "hex": "#494949",
+    "image": ""
+  },
+  {
+    "id": "polished_basalt",
+    "name": "Polished Basalt",
+    "nameCn": "磨制玄武岩",
+    "hex": "#515151",
+    "image": ""
+  },
+  {
+    "id": "soul_sand",
+    "name": "Soul Sand",
+    "nameCn": "灵魂沙",
+    "hex": "#5a4a38",
+    "image": ""
+  },
+  {
+    "id": "soul_soil",
+    "name": "Soul Soil",
+    "nameCn": "灵魂土",
+    "hex": "#4a3a2e",
+    "image": ""
+  },
+  {
+    "id": "glowstone",
+    "name": "Glowstone",
+    "nameCn": "荧石",
+    "hex": "#f8c96a",
+    "image": ""
+  },
+  {
+    "id": "shroomlight",
+    "name": "Shroomlight",
+    "nameCn": "菌光体",
+    "hex": "#f79b3a",
+    "image": ""
+  },
+  {
+    "id": "sea_lantern",
+    "name": "Sea Lantern",
+    "nameCn": "海晶灯",
+    "hex": "#a8c7c7",
+    "image": ""
+  },
+  {
+    "id": "end_stone",
+    "name": "End Stone",
+    "nameCn": "末地石",
+    "hex": "#e4d89f",
+    "image": "End_Stone.png"
+  },
+  {
+    "id": "end_stone_bricks",
+    "name": "End Stone Bricks",
+    "nameCn": "末地石砖",
+    "hex": "#dcd2a2",
+    "image": ""
+  },
+  {
+    "id": "purpur_block",
+    "name": "Purpur Block",
+    "nameCn": "紫珀块",
+    "hex": "#a76ab3",
+    "image": ""
+  },
+  {
+    "id": "purpur_pillar",
+    "name": "Purpur Pillar",
+    "nameCn": "紫珀柱",
+    "hex": "#b37ac0",
+    "image": ""
+  },
+  {
+    "id": "oak_log",
+    "name": "Oak Log",
+    "nameCn": "橡木原木",
+    "hex": "#6e4a2d",
+    "image": ""
+  },
+  {
+    "id": "spruce_log",
+    "name": "Spruce Log",
+    "nameCn": "云杉原木",
+    "hex": "#5b3f2a",
+    "image": ""
+  },
+  {
+    "id": "birch_log",
+    "name": "Birch Log",
+    "nameCn": "白桦原木",
+    "hex": "#d7c6a3",
+    "image": ""
+  },
+  {
+    "id": "jungle_log",
+    "name": "Jungle Log",
+    "nameCn": "丛林原木",
+    "hex": "#5a3b22",
+    "image": ""
+  },
+  {
+    "id": "acacia_log",
+    "name": "Acacia Log",
+    "nameCn": "金合欢原木",
+    "hex": "#7b3f2a",
+    "image": ""
+  },
+  {
+    "id": "dark_oak_log",
+    "name": "Dark Oak Log",
+    "nameCn": "深色橡木原木",
+    "hex": "#3b2a1a",
+    "image": ""
+  },
+  {
+    "id": "mangrove_log",
+    "name": "Mangrove Log",
+    "nameCn": "红树原木",
+    "hex": "#6a3b35",
+    "image": ""
+  },
+  {
+    "id": "cherry_log",
+    "name": "Cherry Log",
+    "nameCn": "樱花原木",
+    "hex": "#7b4a4a",
+    "image": ""
+  },
+  {
+    "id": "bamboo_block",
+    "name": "Block of Bamboo",
+    "nameCn": "竹块",
+    "hex": "#c6b96a",
+    "image": ""
+  },
+  {
+    "id": "crimson_stem",
+    "name": "Crimson Stem",
+    "nameCn": "绯红菌柄",
+    "hex": "#5a2a2a",
+    "image": ""
+  },
+  {
+    "id": "warped_stem",
+    "name": "Warped Stem",
+    "nameCn": "诡异菌柄",
+    "hex": "#2a5a5a",
+    "image": ""
+  },
+  {
+    "id": "stripped_oak_log",
+    "name": "Stripped Oak Log",
+    "nameCn": "去皮橡木原木",
+    "hex": "#8b6b43",
+    "image": ""
+  },
+  {
+    "id": "stripped_spruce_log",
+    "name": "Stripped Spruce Log",
+    "nameCn": "去皮云杉原木",
+    "hex": "#6b4b2f",
+    "image": ""
+  },
+  {
+    "id": "stripped_birch_log",
+    "name": "Stripped Birch Log",
+    "nameCn": "去皮白桦原木",
+    "hex": "#e0d2a5",
+    "image": ""
+  },
+  {
+    "id": "stripped_jungle_log",
+    "name": "Stripped Jungle Log",
+    "nameCn": "去皮丛林原木",
+    "hex": "#7a4a2a",
+    "image": ""
+  },
+  {
+    "id": "stripped_acacia_log",
+    "name": "Stripped Acacia Log",
+    "nameCn": "去皮金合欢原木",
+    "hex": "#b06a4a",
+    "image": ""
+  },
+  {
+    "id": "stripped_dark_oak_log",
+    "name": "Stripped Dark Oak Log",
+    "nameCn": "去皮深色橡木原木",
+    "hex": "#4a2f1b",
+    "image": ""
+  },
+  {
+    "id": "stripped_mangrove_log",
+    "name": "Stripped Mangrove Log",
+    "nameCn": "去皮红树原木",
+    "hex": "#7a3b3b",
+    "image": ""
+  },
+  {
+    "id": "stripped_cherry_log",
+    "name": "Stripped Cherry Log",
+    "nameCn": "去皮樱花原木",
+    "hex": "#a56a6a",
+    "image": ""
+  },
+  {
+    "id": "stripped_crimson_stem",
+    "name": "Stripped Crimson Stem",
+    "nameCn": "去皮绯红菌柄",
+    "hex": "#7a2f2f",
+    "image": ""
+  },
+  {
+    "id": "stripped_warped_stem",
+    "name": "Stripped Warped Stem",
+    "nameCn": "去皮诡异菌柄",
+    "hex": "#2f7a7a",
+    "image": ""
+  },
+  {
+    "id": "oak_planks",
+    "name": "Oak Planks",
+    "nameCn": "橡木木板",
+    "hex": "#a47b52",
+    "image": "Oak_Planks.png"
+  },
+  {
+    "id": "spruce_planks",
+    "name": "Spruce Planks",
+    "nameCn": "云杉木板",
+    "hex": "#6b4f31",
+    "image": "Spruce_Planks.png"
+  },
+  {
+    "id": "birch_planks",
+    "name": "Birch Planks",
+    "nameCn": "白桦木板",
+    "hex": "#c9b37b",
+    "image": "Birch_Planks.png"
+  },
+  {
+    "id": "jungle_planks",
+    "name": "Jungle Planks",
+    "nameCn": "丛林木板",
+    "hex": "#a07a4a",
+    "image": ""
+  },
+  {
+    "id": "acacia_planks",
+    "name": "Acacia Planks",
+    "nameCn": "金合欢木板",
+    "hex": "#b64c2e",
+    "image": ""
+  },
+  {
+    "id": "dark_oak_planks",
+    "name": "Dark Oak Planks",
+    "nameCn": "深色橡木木板",
+    "hex": "#4f3a1e",
+    "image": ""
+  },
+  {
+    "id": "mangrove_planks",
+    "name": "Mangrove Planks",
+    "nameCn": "红树木板",
+    "hex": "#7a3737",
+    "image": "Mangrove_Planks.png"
+  },
+  {
+    "id": "cherry_planks",
+    "name": "Cherry Planks",
+    "nameCn": "樱花木板",
+    "hex": "#d78fa1",
+    "image": ""
+  },
+  {
+    "id": "bamboo_planks",
+    "name": "Bamboo Planks",
+    "nameCn": "竹木板",
+    "hex": "#d9c57a",
+    "image": ""
+  },
+  {
+    "id": "bamboo_mosaic",
+    "name": "Bamboo Mosaic",
+    "nameCn": "竹马赛克",
+    "hex": "#d3c06c",
+    "image": ""
+  },
+  {
+    "id": "crimson_planks",
+    "name": "Crimson Planks",
+    "nameCn": "绯红木板",
+    "hex": "#943f3f",
+    "image": "Crimson_Planks.png"
+  },
+  {
+    "id": "warped_planks",
+    "name": "Warped Planks",
+    "nameCn": "诡异木板",
+    "hex": "#2c8d8f",
+    "image": "Warped_Planks.png"
+  },
+  {
+    "id": "oak_leaves",
+    "name": "Oak Leaves",
+    "nameCn": "橡树树叶",
+    "hex": "#4a6b3a",
+    "image": ""
+  },
+  {
+    "id": "spruce_leaves",
+    "name": "Spruce Leaves",
+    "nameCn": "云杉树叶",
+    "hex": "#3a5a2a",
+    "image": ""
+  },
+  {
+    "id": "birch_leaves",
+    "name": "Birch Leaves",
+    "nameCn": "白桦树叶",
+    "hex": "#5a7a3a",
+    "image": ""
+  },
+  {
+    "id": "jungle_leaves",
+    "name": "Jungle Leaves",
+    "nameCn": "丛林树叶",
+    "hex": "#3a6a3a",
+    "image": ""
+  },
+  {
+    "id": "acacia_leaves",
+    "name": "Acacia Leaves",
+    "nameCn": "金合欢树叶",
+    "hex": "#5a7a3a",
+    "image": ""
+  },
+  {
+    "id": "dark_oak_leaves",
+    "name": "Dark Oak Leaves",
+    "nameCn": "深色橡树树叶",
+    "hex": "#2f4a2a",
+    "image": ""
+  },
+  {
+    "id": "mangrove_leaves",
+    "name": "Mangrove Leaves",
+    "nameCn": "红树树叶",
+    "hex": "#3a5a3a",
+    "image": ""
+  },
+  {
+    "id": "cherry_leaves",
+    "name": "Cherry Leaves",
+    "nameCn": "樱花树叶",
+    "hex": "#b57a90",
+    "image": ""
+  },
+  {
+    "id": "azalea_leaves",
+    "name": "Azalea Leaves",
+    "nameCn": "杜鹃树叶",
+    "hex": "#4a7a3a",
+    "image": ""
+  },
+  {
+    "id": "flowering_azalea_leaves",
+    "name": "Flowering Azalea Leaves",
+    "nameCn": "开花杜鹃树叶",
+    "hex": "#6a8a5a",
+    "image": ""
+  },
+  {
+    "id": "water",
+    "name": "Water",
+    "nameCn": "水",
+    "hex": "#3f76e4",
+    "image": "Water.png"
+  },
+  {
+    "id": "lava",
+    "name": "Lava",
+    "nameCn": "岩浆",
+    "hex": "#f1761d",
+    "image": "Lava.png"
+  },
+  {
+    "id": "ice",
+    "name": "Ice",
+    "nameCn": "冰",
+    "hex": "#a3c8ff",
+    "image": ""
+  },
+  {
+    "id": "packed_ice",
+    "name": "Packed Ice",
+    "nameCn": "浮冰",
+    "hex": "#8ab1f5",
+    "image": ""
+  },
+  {
+    "id": "blue_ice",
+    "name": "Blue Ice",
+    "nameCn": "蓝冰",
+    "hex": "#73a7f2",
+    "image": ""
+  },
+  {
+    "id": "snow_block",
+    "name": "Snow Block",
+    "nameCn": "雪块",
+    "hex": "#f0f4ff",
+    "image": ""
+  },
+  {
+    "id": "glass",
+    "name": "Glass",
+    "nameCn": "玻璃",
+    "hex": "#cfe7e7",
+    "image": "Glass.png"
+  },
+  {
+    "id": "white_stained_glass",
+    "name": "White Stained Glass",
+    "nameCn": "白色染色玻璃",
+    "hex": "#f8f8f8",
+    "image": ""
+  },
+  {
+    "id": "orange_stained_glass",
+    "name": "Orange Stained Glass",
+    "nameCn": "橙色染色玻璃",
+    "hex": "#f79b36",
+    "image": ""
+  },
+  {
+    "id": "magenta_stained_glass",
+    "name": "Magenta Stained Glass",
+    "nameCn": "品红色染色玻璃",
+    "hex": "#d45cd6",
+    "image": ""
+  },
+  {
+    "id": "light_blue_stained_glass",
+    "name": "Light Blue Stained Glass",
+    "nameCn": "淡蓝色染色玻璃",
+    "hex": "#5abfd2",
+    "image": ""
+  },
+  {
+    "id": "yellow_stained_glass",
+    "name": "Yellow Stained Glass",
+    "nameCn": "黄色染色玻璃",
+    "hex": "#f9d64a",
+    "image": ""
+  },
+  {
+    "id": "lime_stained_glass",
+    "name": "Lime Stained Glass",
+    "nameCn": "黄绿色染色玻璃",
+    "hex": "#8ad53f",
+    "image": ""
+  },
+  {
+    "id": "pink_stained_glass",
+    "name": "Pink Stained Glass",
+    "nameCn": "粉红色染色玻璃",
+    "hex": "#f4a5a5",
+    "image": ""
+  },
+  {
+    "id": "gray_stained_glass",
+    "name": "Gray Stained Glass",
+    "nameCn": "灰色染色玻璃",
+    "hex": "#4c4c4c",
+    "image": ""
+  },
+  {
+    "id": "light_gray_stained_glass",
+    "name": "Light Gray Stained Glass",
+    "nameCn": "淡灰色染色玻璃",
+    "hex": "#9d9d9d",
+    "image": ""
+  },
+  {
+    "id": "cyan_stained_glass",
+    "name": "Cyan Stained Glass",
+    "nameCn": "青色染色玻璃",
+    "hex": "#1b98a7",
+    "image": ""
+  },
+  {
+    "id": "purple_stained_glass",
+    "name": "Purple Stained Glass",
+    "nameCn": "紫色染色玻璃",
+    "hex": "#7e3fc8",
+    "image": ""
+  },
+  {
+    "id": "blue_stained_glass",
+    "name": "Blue Stained Glass",
+    "nameCn": "蓝色染色玻璃",
+    "hex": "#3b5bbf",
+    "image": ""
+  },
+  {
+    "id": "brown_stained_glass",
+    "name": "Brown Stained Glass",
+    "nameCn": "棕色染色玻璃",
+    "hex": "#6e4b2c",
+    "image": ""
+  },
+  {
+    "id": "green_stained_glass",
+    "name": "Green Stained Glass",
+    "nameCn": "绿色染色玻璃",
+    "hex": "#4c9b2d",
+    "image": ""
+  },
+  {
+    "id": "red_stained_glass",
+    "name": "Red Stained Glass",
+    "nameCn": "红色染色玻璃",
+    "hex": "#b02e26",
+    "image": ""
+  },
+  {
+    "id": "black_stained_glass",
+    "name": "Black Stained Glass",
+    "nameCn": "黑色染色玻璃",
+    "hex": "#1f1f1f",
+    "image": ""
+  },
+  {
+    "id": "white_concrete",
+    "name": "White Concrete",
+    "nameCn": "白色混凝土",
+    "hex": "#f0f0f0",
+    "image": ""
+  },
+  {
+    "id": "orange_concrete",
+    "name": "Orange Concrete",
+    "nameCn": "橙色混凝土",
+    "hex": "#f07513",
+    "image": ""
+  },
+  {
+    "id": "magenta_concrete",
+    "name": "Magenta Concrete",
+    "nameCn": "品红色混凝土",
+    "hex": "#c44fbd",
+    "image": ""
+  },
+  {
+    "id": "light_blue_concrete",
+    "name": "Light Blue Concrete",
+    "nameCn": "淡蓝色混凝土",
+    "hex": "#3aa4e6",
+    "image": ""
+  },
+  {
+    "id": "yellow_concrete",
+    "name": "Yellow Concrete",
+    "nameCn": "黄色混凝土",
+    "hex": "#f7d51d",
+    "image": ""
+  },
+  {
+    "id": "lime_concrete",
+    "name": "Lime Concrete",
+    "nameCn": "黄绿色混凝土",
+    "hex": "#7acb18",
+    "image": ""
+  },
+  {
+    "id": "pink_concrete",
+    "name": "Pink Concrete",
+    "nameCn": "粉红色混凝土",
+    "hex": "#ed8dac",
+    "image": ""
+  },
+  {
+    "id": "gray_concrete",
+    "name": "Gray Concrete",
+    "nameCn": "灰色混凝土",
+    "hex": "#4c4c4c",
+    "image": ""
+  },
+  {
+    "id": "light_gray_concrete",
+    "name": "Light Gray Concrete",
+    "nameCn": "淡灰色混凝土",
+    "hex": "#8e8e8e",
+    "image": ""
+  },
+  {
+    "id": "cyan_concrete",
+    "name": "Cyan Concrete",
+    "nameCn": "青色混凝土",
+    "hex": "#157788",
+    "image": ""
+  },
+  {
+    "id": "purple_concrete",
+    "name": "Purple Concrete",
+    "nameCn": "紫色混凝土",
+    "hex": "#641f9b",
+    "image": ""
+  },
+  {
+    "id": "blue_concrete",
+    "name": "Blue Concrete",
+    "nameCn": "蓝色混凝土",
+    "hex": "#2d4db5",
+    "image": ""
+  },
+  {
+    "id": "brown_concrete",
+    "name": "Brown Concrete",
+    "nameCn": "棕色混凝土",
+    "hex": "#5a3b1b",
+    "image": ""
+  },
+  {
+    "id": "green_concrete",
+    "name": "Green Concrete",
+    "nameCn": "绿色混凝土",
+    "hex": "#3a8c2a",
+    "image": ""
+  },
+  {
+    "id": "red_concrete",
+    "name": "Red Concrete",
+    "nameCn": "红色混凝土",
+    "hex": "#b02e26",
+    "image": ""
+  },
+  {
+    "id": "black_concrete",
+    "name": "Black Concrete",
+    "nameCn": "黑色混凝土",
+    "hex": "#191919",
+    "image": ""
+  },
+  {
+    "id": "white_terracotta",
+    "name": "White Terracotta",
+    "nameCn": "白色陶瓦",
+    "hex": "#d2b39b",
+    "image": ""
+  },
+  {
+    "id": "orange_terracotta",
+    "name": "Orange Terracotta",
+    "nameCn": "橙色陶瓦",
+    "hex": "#a24a2f",
+    "image": ""
+  },
+  {
+    "id": "magenta_terracotta",
+    "name": "Magenta Terracotta",
+    "nameCn": "品红色陶瓦",
+    "hex": "#95576c",
+    "image": ""
+  },
+  {
+    "id": "light_blue_terracotta",
+    "name": "Light Blue Terracotta",
+    "nameCn": "淡蓝色陶瓦",
+    "hex": "#706c89",
+    "image": ""
+  },
+  {
+    "id": "yellow_terracotta",
+    "name": "Yellow Terracotta",
+    "nameCn": "黄色陶瓦",
+    "hex": "#ba8524",
+    "image": ""
+  },
+  {
+    "id": "lime_terracotta",
+    "name": "Lime Terracotta",
+    "nameCn": "黄绿色陶瓦",
+    "hex": "#677535",
+    "image": ""
+  },
+  {
+    "id": "pink_terracotta",
+    "name": "Pink Terracotta",
+    "nameCn": "粉红色陶瓦",
+    "hex": "#a04d4e",
+    "image": ""
+  },
+  {
+    "id": "gray_terracotta",
+    "name": "Gray Terracotta",
+    "nameCn": "灰色陶瓦",
+    "hex": "#3a2a24",
+    "image": ""
+  },
+  {
+    "id": "light_gray_terracotta",
+    "name": "Light Gray Terracotta",
+    "nameCn": "淡灰色陶瓦",
+    "hex": "#876b62",
+    "image": ""
+  },
+  {
+    "id": "cyan_terracotta",
+    "name": "Cyan Terracotta",
+    "nameCn": "青色陶瓦",
+    "hex": "#575c5c",
+    "image": ""
+  },
+  {
+    "id": "purple_terracotta",
+    "name": "Purple Terracotta",
+    "nameCn": "紫色陶瓦",
+    "hex": "#764656",
+    "image": ""
+  },
+  {
+    "id": "blue_terracotta",
+    "name": "Blue Terracotta",
+    "nameCn": "蓝色陶瓦",
+    "hex": "#4a3a5a",
+    "image": ""
+  },
+  {
+    "id": "brown_terracotta",
+    "name": "Brown Terracotta",
+    "nameCn": "棕色陶瓦",
+    "hex": "#4d2c1f",
+    "image": ""
+  },
+  {
+    "id": "green_terracotta",
+    "name": "Green Terracotta",
+    "nameCn": "绿色陶瓦",
+    "hex": "#4d5632",
+    "image": ""
+  },
+  {
+    "id": "red_terracotta",
+    "name": "Red Terracotta",
+    "nameCn": "红色陶瓦",
+    "hex": "#8a3c2e",
+    "image": ""
+  },
+  {
+    "id": "black_terracotta",
+    "name": "Black Terracotta",
+    "nameCn": "黑色陶瓦",
+    "hex": "#251610",
+    "image": ""
+  },
+  {
+    "id": "white_wool",
+    "name": "White Wool",
+    "nameCn": "白色羊毛",
+    "hex": "#e9ecea",
+    "image": ""
+  },
+  {
+    "id": "orange_wool",
+    "name": "Orange Wool",
+    "nameCn": "橙色羊毛",
+    "hex": "#f07613",
+    "image": ""
+  },
+  {
+    "id": "magenta_wool",
+    "name": "Magenta Wool",
+    "nameCn": "品红色羊毛",
+    "hex": "#c34ccf",
+    "image": ""
+  },
+  {
+    "id": "light_blue_wool",
+    "name": "Light Blue Wool",
+    "nameCn": "淡蓝色羊毛",
+    "hex": "#3ab3da",
+    "image": ""
+  },
+  {
+    "id": "yellow_wool",
+    "name": "Yellow Wool",
+    "nameCn": "黄色羊毛",
+    "hex": "#f0d33a",
+    "image": ""
+  },
+  {
+    "id": "lime_wool",
+    "name": "Lime Wool",
+    "nameCn": "黄绿色羊毛",
+    "hex": "#7acb18",
+    "image": ""
+  },
+  {
+    "id": "pink_wool",
+    "name": "Pink Wool",
+    "nameCn": "粉红色羊毛",
+    "hex": "#f4b3bf",
+    "image": ""
+  },
+  {
+    "id": "gray_wool",
+    "name": "Gray Wool",
+    "nameCn": "灰色羊毛",
+    "hex": "#3e4447",
+    "image": ""
+  },
+  {
+    "id": "light_gray_wool",
+    "name": "Light Gray Wool",
+    "nameCn": "淡灰色羊毛",
+    "hex": "#8e8e8e",
+    "image": ""
+  },
+  {
+    "id": "cyan_wool",
+    "name": "Cyan Wool",
+    "nameCn": "青色羊毛",
+    "hex": "#158991",
+    "image": ""
+  },
+  {
+    "id": "purple_wool",
+    "name": "Purple Wool",
+    "nameCn": "紫色羊毛",
+    "hex": "#7b2fa2",
+    "image": ""
+  },
+  {
+    "id": "blue_wool",
+    "name": "Blue Wool",
+    "nameCn": "蓝色羊毛",
+    "hex": "#35399d",
+    "image": ""
+  },
+  {
+    "id": "brown_wool",
+    "name": "Brown Wool",
+    "nameCn": "棕色羊毛",
+    "hex": "#724728",
+    "image": ""
+  },
+  {
+    "id": "green_wool",
+    "name": "Green Wool",
+    "nameCn": "绿色羊毛",
+    "hex": "#546d1b",
+    "image": ""
+  },
+  {
+    "id": "red_wool",
+    "name": "Red Wool",
+    "nameCn": "红色羊毛",
+    "hex": "#b02e26",
+    "image": ""
+  },
+  {
+    "id": "black_wool",
+    "name": "Black Wool",
+    "nameCn": "黑色羊毛",
+    "hex": "#1d1d21",
+    "image": ""
+  },
+  {
+    "id": "gold_block",
+    "name": "Gold Block",
+    "nameCn": "金块",
+    "hex": "#f6d32d",
+    "image": "Gold_Block.png"
+  },
+  {
+    "id": "iron_block",
+    "name": "Iron Block",
+    "nameCn": "铁块",
+    "hex": "#d8d8d8",
+    "image": "Iron_Block.png"
+  },
+  {
+    "id": "diamond_block",
+    "name": "Diamond Block",
+    "nameCn": "钻石块",
+    "hex": "#5cd6d6",
+    "image": "Diamond_Block.png"
+  },
+  {
+    "id": "emerald_block",
+    "name": "Emerald Block",
+    "nameCn": "绿宝石块",
+    "hex": "#2cc06f",
+    "image": "Emerald_Block.png"
+  },
+  {
+    "id": "redstone_block",
+    "name": "Redstone Block",
+    "nameCn": "红石块",
+    "hex": "#b02e26",
+    "image": "Redstone_Block.png"
+  },
+  {
+    "id": "lapis_block",
+    "name": "Lapis Block",
+    "nameCn": "青金石块",
+    "hex": "#1f4fb2",
+    "image": "Lapis_Lazuli_Block.png"
+  },
+  {
+    "id": "copper_block",
+    "name": "Block of Copper",
+    "nameCn": "铜块",
+    "hex": "#c26a4a",
+    "image": ""
+  },
+  {
+    "id": "exposed_copper",
+    "name": "Exposed Copper",
+    "nameCn": "暴露的铜块",
+    "hex": "#a56a4a",
+    "image": ""
+  },
+  {
+    "id": "weathered_copper",
+    "name": "Weathered Copper",
+    "nameCn": "风化的铜块",
+    "hex": "#5a9b7a",
+    "image": ""
+  },
+  {
+    "id": "oxidized_copper",
+    "name": "Oxidized Copper",
+    "nameCn": "氧化的铜块",
+    "hex": "#4a7a6a",
+    "image": ""
+  },
+  {
+    "id": "cut_copper",
+    "name": "Cut Copper",
+    "nameCn": "切制铜块",
+    "hex": "#b86a4a",
+    "image": ""
+  },
+  {
+    "id": "exposed_cut_copper",
+    "name": "Exposed Cut Copper",
+    "nameCn": "暴露的切制铜块",
+    "hex": "#a06a4a",
+    "image": ""
+  },
+  {
+    "id": "weathered_cut_copper",
+    "name": "Weathered Cut Copper",
+    "nameCn": "风化的切制铜块",
+    "hex": "#5a907a",
+    "image": ""
+  },
+  {
+    "id": "oxidized_cut_copper",
+    "name": "Oxidized Cut Copper",
+    "nameCn": "氧化的切制铜块",
+    "hex": "#4a7a6a",
+    "image": ""
+  },
+  {
+    "id": "quartz_block",
+    "name": "Quartz Block",
+    "nameCn": "石英块",
+    "hex": "#eee6dd",
+    "image": "Quartz_Block.png"
+  },
+  {
+    "id": "smooth_quartz",
+    "name": "Smooth Quartz",
+    "nameCn": "光滑石英块",
+    "hex": "#f0e8e0",
+    "image": ""
+  },
+  {
+    "id": "quartz_pillar",
+    "name": "Quartz Pillar",
+    "nameCn": "石英柱",
+    "hex": "#f2e9e0",
+    "image": ""
+  },
+  {
+    "id": "chiseled_quartz_block",
+    "name": "Chiseled Quartz Block",
+    "nameCn": "錾制石英块",
+    "hex": "#f2e9e0",
+    "image": ""
+  },
+  {
+    "id": "amethyst_block",
+    "name": "Amethyst Block",
+    "nameCn": "紫水晶块",
+    "hex": "#9a5cc6",
+    "image": "Amethyst_Block.png"
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "nameCn": "黑曜石",
+    "hex": "#140a1f",
+    "image": "Obsidian.png"
+  },
+  {
+    "id": "crafting_table",
+    "name": "Crafting Table",
+    "nameCn": "工作台",
+    "hex": "#a57c52",
+    "image": ""
+  },
+  {
+    "id": "furnace",
+    "name": "Furnace",
+    "nameCn": "熔炉",
+    "hex": "#7f7f7f",
+    "image": ""
+  },
+  {
+    "id": "blast_furnace",
+    "name": "Blast Furnace",
+    "nameCn": "高炉",
+    "hex": "#6f6f6f",
+    "image": ""
+  },
+  {
+    "id": "smoker",
+    "name": "Smoker",
+    "nameCn": "烟熏炉",
+    "hex": "#7a6b5b",
+    "image": ""
+  },
+  {
+    "id": "chest",
+    "name": "Chest",
+    "nameCn": "箱子",
+    "hex": "#a17b4e",
+    "image": ""
+  },
+  {
+    "id": "barrel",
+    "name": "Barrel",
+    "nameCn": "木桶",
+    "hex": "#8b6b4a",
+    "image": ""
+  },
+  {
+    "id": "hopper",
+    "name": "Hopper",
+    "nameCn": "漏斗",
+    "hex": "#3a3a3a",
+    "image": ""
+  },
+  {
+    "id": "dispenser",
+    "name": "Dispenser",
+    "nameCn": "发射器",
+    "hex": "#7a7a7a",
+    "image": ""
+  },
+  {
+    "id": "dropper",
+    "name": "Dropper",
+    "nameCn": "投掷器",
+    "hex": "#7a7a7a",
+    "image": ""
+  },
+  {
+    "id": "note_block",
+    "name": "Note Block",
+    "nameCn": "音符盒",
+    "hex": "#8b5a2b",
+    "image": ""
+  },
+  {
+    "id": "jukebox",
+    "name": "Jukebox",
+    "nameCn": "唱片机",
+    "hex": "#a05a2a",
+    "image": ""
+  },
+  {
+    "id": "bookshelf",
+    "name": "Bookshelf",
+    "nameCn": "书架",
+    "hex": "#b88b5a",
+    "image": ""
+  },
+  {
+    "id": "enchanting_table",
+    "name": "Enchanting Table",
+    "nameCn": "附魔台",
+    "hex": "#1a0f2e",
+    "image": ""
+  },
+  {
+    "id": "anvil",
+    "name": "Anvil",
+    "nameCn": "铁砧",
+    "hex": "#4a4a4a",
+    "image": ""
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "nameCn": "织布机",
+    "hex": "#9b7b5a",
+    "image": ""
+  },
+  {
+    "id": "cartography_table",
+    "name": "Cartography Table",
+    "nameCn": "制图台",
+    "hex": "#a47b52",
+    "image": ""
+  },
+  {
+    "id": "fletching_table",
+    "name": "Fletching Table",
+    "nameCn": "制箭台",
+    "hex": "#a7795a",
+    "image": ""
+  },
+  {
+    "id": "smithing_table",
+    "name": "Smithing Table",
+    "nameCn": "锻造台",
+    "hex": "#3b3b3b",
+    "image": ""
+  },
+  {
+    "id": "stonecutter",
+    "name": "Stonecutter",
+    "nameCn": "切石机",
+    "hex": "#8b8b8b",
+    "image": ""
+  },
+  {
+    "id": "grindstone",
+    "name": "Grindstone",
+    "nameCn": "砂轮",
+    "hex": "#9b8b7a",
+    "image": ""
+  },
+  {
+    "id": "lectern",
+    "name": "Lectern",
+    "nameCn": "讲台",
+    "hex": "#a78b5a",
+    "image": ""
+  },
+  {
+    "id": "composter",
+    "name": "Composter",
+    "nameCn": "堆肥桶",
+    "hex": "#6a4b2a",
+    "image": ""
+  },
+  {
+    "id": "brewing_stand",
+    "name": "Brewing Stand",
+    "nameCn": "酿造台",
+    "hex": "#c3a15a",
+    "image": ""
+  },
+  {
+    "id": "cauldron",
+    "name": "Cauldron",
+    "nameCn": "炼药锅",
+    "hex": "#3a3a3a",
+    "image": ""
+  },
+  {
+    "id": "bell",
+    "name": "Bell",
+    "nameCn": "钟",
+    "hex": "#c9a535",
+    "image": ""
+  },
+  {
+    "id": "beacon",
+    "name": "Beacon",
+    "nameCn": "信标",
+    "hex": "#a7d3d3",
+    "image": ""
+  },
+  {
+    "id": "lodestone",
+    "name": "Lodestone",
+    "nameCn": "磁石",
+    "hex": "#4b4b4b",
+    "image": ""
+  },
+  {
+    "id": "ender_chest",
+    "name": "Ender Chest",
+    "nameCn": "末影箱",
+    "hex": "#1b1b2a",
+    "image": ""
+  },
+  {
+    "id": "respawn_anchor",
+    "name": "Respawn Anchor",
+    "nameCn": "重生锚",
+    "hex": "#2a1b2a",
+    "image": ""
+  },
+  {
+    "id": "white_concrete_powder",
+    "name": "White Concrete Powder",
+    "nameCn": "白色混凝土粉末",
+    "hex": "#e0e0e0",
+    "image": ""
+  },
+  {
+    "id": "orange_concrete_powder",
+    "name": "Orange Concrete Powder",
+    "nameCn": "橙色混凝土粉末",
+    "hex": "#f08b2a",
+    "image": ""
+  },
+  {
+    "id": "magenta_concrete_powder",
+    "name": "Magenta Concrete Powder",
+    "nameCn": "品红色混凝土粉末",
+    "hex": "#c96ac9",
+    "image": ""
+  },
+  {
+    "id": "light_blue_concrete_powder",
+    "name": "Light Blue Concrete Powder",
+    "nameCn": "淡蓝色混凝土粉末",
+    "hex": "#5aaee6",
+    "image": ""
+  },
+  {
+    "id": "yellow_concrete_powder",
+    "name": "Yellow Concrete Powder",
+    "nameCn": "黄色混凝土粉末",
+    "hex": "#f9df4a",
+    "image": ""
+  },
+  {
+    "id": "lime_concrete_powder",
+    "name": "Lime Concrete Powder",
+    "nameCn": "黄绿色混凝土粉末",
+    "hex": "#8adf3a",
+    "image": ""
+  },
+  {
+    "id": "pink_concrete_powder",
+    "name": "Pink Concrete Powder",
+    "nameCn": "粉红色混凝土粉末",
+    "hex": "#f0a3b8",
+    "image": ""
+  },
+  {
+    "id": "gray_concrete_powder",
+    "name": "Gray Concrete Powder",
+    "nameCn": "灰色混凝土粉末",
+    "hex": "#6b6b6b",
+    "image": ""
+  },
+  {
+    "id": "light_gray_concrete_powder",
+    "name": "Light Gray Concrete Powder",
+    "nameCn": "淡灰色混凝土粉末",
+    "hex": "#b0b0b0",
+    "image": ""
+  },
+  {
+    "id": "cyan_concrete_powder",
+    "name": "Cyan Concrete Powder",
+    "nameCn": "青色混凝土粉末",
+    "hex": "#2a9ea9",
+    "image": ""
+  },
+  {
+    "id": "purple_concrete_powder",
+    "name": "Purple Concrete Powder",
+    "nameCn": "紫色混凝土粉末",
+    "hex": "#7643b3",
+    "image": ""
+  },
+  {
+    "id": "blue_concrete_powder",
+    "name": "Blue Concrete Powder",
+    "nameCn": "蓝色混凝土粉末",
+    "hex": "#4057c8",
+    "image": ""
+  },
+  {
+    "id": "brown_concrete_powder",
+    "name": "Brown Concrete Powder",
+    "nameCn": "棕色混凝土粉末",
+    "hex": "#7a5a3a",
+    "image": ""
+  },
+  {
+    "id": "green_concrete_powder",
+    "name": "Green Concrete Powder",
+    "nameCn": "绿色混凝土粉末",
+    "hex": "#4a8a3a",
+    "image": ""
+  },
+  {
+    "id": "red_concrete_powder",
+    "name": "Red Concrete Powder",
+    "nameCn": "红色混凝土粉末",
+    "hex": "#c23a32",
+    "image": ""
+  },
+  {
+    "id": "black_concrete_powder",
+    "name": "Black Concrete Powder",
+    "nameCn": "黑色混凝土粉末",
+    "hex": "#1b1b1b",
+    "image": ""
+  }
+]
