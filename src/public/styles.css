@@ -170,6 +170,11 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  cursor: grab;
+}
+
+#mainCanvas.is-panning {
+  cursor: grabbing;
 }
 
 #magnifier {
@@ -186,6 +191,28 @@ body {
   margin-top: 12px;
   color: var(--muted);
   font-size: 13px;
+}
+
+.zoom-controls {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.zoom-range {
+  flex: 1;
+  min-width: 160px;
+  accent-color: var(--accent);
+}
+
+.zoom-readout {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 .section {

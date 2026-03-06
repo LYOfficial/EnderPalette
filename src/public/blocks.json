@@ -1278,28 +1278,28 @@
     "name": "Gold Block",
     "nameCn": "金块",
     "hex": "#f6d32d",
-    "image": "Gold_Block.png"
+    "image": "Block_of_Gold_JE6_BE3.png"
   },
   {
     "id": "iron_block",
     "name": "Iron Block",
     "nameCn": "铁块",
     "hex": "#d8d8d8",
-    "image": "Iron_Block.png"
+    "image": "Block_of_Iron_JE4_BE3.png"
   },
   {
     "id": "diamond_block",
     "name": "Diamond Block",
     "nameCn": "钻石块",
     "hex": "#5cd6d6",
-    "image": "Diamond_Block.png"
+    "image": "Block_of_Diamond_JE5_BE3.png"
   },
   {
     "id": "emerald_block",
     "name": "Emerald Block",
     "nameCn": "绿宝石块",
     "hex": "#2cc06f",
-    "image": "Emerald_Block.png"
+    "image": "Block_of_Emerald_JE4_BE3.png"
   },
   {
     "id": "redstone_block",
@@ -1376,7 +1376,7 @@
     "name": "Quartz Block",
     "nameCn": "石英块",
     "hex": "#eee6dd",
-    "image": "Quartz_Block.png"
+    "image": "Block_of_Quartz_JE3_BE3.png"
   },
   {
     "id": "smooth_quartz",
@@ -1390,7 +1390,7 @@
     "name": "Quartz Pillar",
     "nameCn": "石英柱",
     "hex": "#f2e9e0",
-    "image": ""
+    "image": "Quartz_Pillar_(UD)_JE3_BE2.png"
   },
   {
     "id": "chiseled_quartz_block",
@@ -1726,6 +1726,139 @@
     "name": "Black Concrete Powder",
     "nameCn": "黑色混凝土粉末",
     "hex": "#1b1b1b",
+    "image": ""
+  },
+  {
+    "id": "smooth_stone",
+    "name": "Smooth Stone",
+    "nameCn": "平滑石头",
+    "hex": "#9f9f9f",
+    "image": ""
+  },
+  {
+    "id": "calcite",
+    "name": "Calcite",
+    "nameCn": "方解石",
+    "hex": "#e8e5da",
+    "image": ""
+  },
+  {
+    "id": "smooth_basalt",
+    "name": "Smooth Basalt",
+    "nameCn": "平滑玄武岩",
+    "hex": "#4a4a4a",
+    "image": ""
+  },
+  {
+    "id": "dripstone_block",
+    "name": "Dripstone Block",
+    "nameCn": "滴水石块",
+    "hex": "#8b6b4a",
+    "image": ""
+  },
+  {
+    "id": "quartz_bricks",
+    "name": "Quartz Bricks",
+    "nameCn": "石英砖",
+    "hex": "#ede6dd",
+    "image": ""
+  },
+  {
+    "id": "moss_block",
+    "name": "Moss Block",
+    "nameCn": "苔藓块",
+    "hex": "#586c2e",
+    "image": ""
+  },
+  {
+    "id": "glow_lichen",
+    "name": "Glow Lichen",
+    "nameCn": "发光地衣",
+    "hex": "#7bb7a6",
+    "image": ""
+  },
+  {
+    "id": "lantern",
+    "name": "Lantern",
+    "nameCn": "灯笼",
+    "hex": "#f7cf6a",
+    "image": ""
+  },
+  {
+    "id": "soul_lantern",
+    "name": "Soul Lantern",
+    "nameCn": "灵魂灯笼",
+    "hex": "#57b7b3",
+    "image": ""
+  },
+  {
+    "id": "end_rod",
+    "name": "End Rod",
+    "nameCn": "末地烛",
+    "hex": "#f4e8d6",
+    "image": ""
+  },
+  {
+    "id": "slime_block",
+    "name": "Slime Block",
+    "nameCn": "黏液块",
+    "hex": "#6ecb6a",
+    "image": ""
+  },
+  {
+    "id": "honey_block",
+    "name": "Honey Block",
+    "nameCn": "蜂蜜块",
+    "hex": "#f4a53a",
+    "image": ""
+  },
+  {
+    "id": "target",
+    "name": "Target",
+    "nameCn": "标靶",
+    "hex": "#d6b0b0",
+    "image": ""
+  },
+  {
+    "id": "redstone_lamp",
+    "name": "Redstone Lamp",
+    "nameCn": "红石灯",
+    "hex": "#c27b39",
+    "image": ""
+  },
+  {
+    "id": "daylight_detector",
+    "name": "Daylight Detector",
+    "nameCn": "阳光探测器",
+    "hex": "#bda56a",
+    "image": ""
+  },
+  {
+    "id": "piston",
+    "name": "Piston",
+    "nameCn": "活塞",
+    "hex": "#a57c52",
+    "image": ""
+  },
+  {
+    "id": "sticky_piston",
+    "name": "Sticky Piston",
+    "nameCn": "黏性活塞",
+    "hex": "#7aa35a",
+    "image": ""
+  },
+  {
+    "id": "observer",
+    "name": "Observer",
+    "nameCn": "侦测器",
+    "hex": "#5a5a5a",
+    "image": ""
+  },
+  {
+    "id": "sculk",
+    "name": "Sculk",
+    "nameCn": "幽匿块",
+    "hex": "#0f2b30",
     "image": ""
   }
 ]

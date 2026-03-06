@@ -4,6 +4,11 @@ const dropZone = document.getElementById("dropZone");
 const mainCanvas = document.getElementById("mainCanvas");
 const edgeCanvas = document.getElementById("edgeCanvas");
 const magnifier = document.getElementById("magnifier");
+const zoomInBtn = document.getElementById("zoomInBtn");
+const zoomOutBtn = document.getElementById("zoomOutBtn");
+const zoomResetBtn = document.getElementById("zoomResetBtn");
+const zoomRange = document.getElementById("zoomRange");
+const zoomValue = document.getElementById("zoomValue");
 const matchesEl = document.getElementById("matches");
 const inspectSwatch = document.getElementById("inspectSwatch");
 const inspectHex = document.getElementById("inspectHex");
@@ -14,6 +19,8 @@ const i18nNodes = document.querySelectorAll("[data-i18n]");
 const mainCtx = mainCanvas.getContext("2d", { willReadFrequently: true });
 const edgeCtx = edgeCanvas.getContext("2d");
 const magCtx = magnifier.getContext("2d");
+const sourceCanvas = document.createElement("canvas");
+const sourceCtx = sourceCanvas.getContext("2d", { willReadFrequently: true });
 
 let blocks = [];
 let blockCache = [];
@@ -31,12 +38,16 @@ const I18N = {
     uploadTitle: "上传图片",
     uploadDesc: "把图片拖到这里，或点击选择。",
     chooseFile: "选择文件",
-    hint: "点击画面任意位置分析颜色块。",
+    hint: "滚轮缩放，拖拽移动，点击画面取色。",
     inspector: "取色器",
     edgeLines: "边缘线条",
     blockMatches: "方块匹配",
     noMatch: "暂无匹配",
     langToggle: "切换语言",
+    zoomIn: "放大",
+    zoomOut: "缩小",
+    zoomReset: "重置",
+    zoomLabel: "缩放",
   },
   en: {
     tagline: "EnderPalette · Minecraft Image Palette Analyzer",
@@ -45,12 +56,16 @@ const I18N = {
     uploadTitle: "Upload Image",
     uploadDesc: "Drag an image here or click to choose.",
     chooseFile: "Choose File",
-    hint: "Click any area to analyze that color block.",
+    hint: "Scroll to zoom, drag to pan, click to sample.",
     inspector: "Inspector",
     edgeLines: "Edge Lines",
     blockMatches: "Minecraft Block Matches",
     noMatch: "No match",
     langToggle: "Language",
+    zoomIn: "Zoom In",
+    zoomOut: "Zoom Out",
+    zoomReset: "Reset",
+    zoomLabel: "Zoom",
   },
 };
 
@@ -58,6 +73,18 @@ const MAX_W = 960;
 const MAX_H = 540;
 const MAG_SIZE = 140;
 const MAG_ZOOM = 6;
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 8;
+const ZOOM_STEP = 0.25;
+
+const viewState = {
+  zoom: 1,
+  panX: 0,
+  panY: 0,
+  isPanning: false,
+  dragStart: null,
+  wasDragging: false,
+};
 
 init();
 
@@ -103,22 +130,46 @@ function init() {
 
   dropZone.addEventListener("click", () => fileInput.click());
 
-  mainCanvas.addEventListener("mousemove", (e) => {
-    if (!currentImage) return;
-    const pos = getCanvasPos(e);
-    renderMagnifier(pos.x, pos.y);
-  });
+  mainCanvas.addEventListener("mousemove", (e) => handleCanvasMove(e));
 
   mainCanvas.addEventListener("mouseleave", () => {
+    stopPanning();
     magCtx.clearRect(0, 0, MAG_SIZE, MAG_SIZE);
   });
 
   mainCanvas.addEventListener("click", (e) => {
     if (!currentImage) return;
-    const pos = getCanvasPos(e);
+    if (viewState.wasDragging) {
+      viewState.wasDragging = false;
+      return;
+    }
+    const pos = getImagePos(e);
     const color = sampleAverageColor(pos.x, pos.y, 6);
     updateInspector(color);
   });
+
+  mainCanvas.addEventListener("mousedown", (e) => startPanning(e));
+  window.addEventListener("mouseup", () => stopPanning());
+  mainCanvas.addEventListener("wheel", (e) => handleCanvasZoom(e), {
+    passive: false,
+  });
+
+  if (zoomInBtn) {
+    zoomInBtn.addEventListener("click", () => adjustZoom(ZOOM_STEP));
+  }
+  if (zoomOutBtn) {
+    zoomOutBtn.addEventListener("click", () => adjustZoom(-ZOOM_STEP));
+  }
+  if (zoomResetBtn) {
+    zoomResetBtn.addEventListener("click", () => resetView());
+  }
+  if (zoomRange) {
+    zoomRange.addEventListener("input", (e) => {
+      if (!currentImage) return;
+      const value = Number(e.target.value);
+      setZoom(value, mainCanvas.width / 2, mainCanvas.height / 2);
+    });
+  }
 }
 
 function handleFiles(files) {
@@ -146,14 +197,18 @@ function drawToCanvas(img) {
   const w = Math.floor(img.width * scale);
   const h = Math.floor(img.height * scale);
 
+  sourceCanvas.width = w;
+  sourceCanvas.height = h;
+  sourceCtx.clearRect(0, 0, w, h);
+  sourceCtx.drawImage(img, 0, 0, w, h);
+
   mainCanvas.width = w;
   mainCanvas.height = h;
-  mainCtx.clearRect(0, 0, w, h);
-  mainCtx.drawImage(img, 0, 0, w, h);
+  resetView();
 }
 
 function analyzeImage() {
-  const imageData = mainCtx.getImageData(0, 0, mainCanvas.width, mainCanvas.height);
+  const imageData = sourceCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
   renderEdges(imageData);
   lastResults = analyzeBlocks(imageData);
   renderMatches(lastResults);
@@ -323,13 +378,13 @@ function nearestBlockIndexLab(colorLab) {
 
 function renderMagnifier(x, y) {
   const size = Math.floor(MAG_SIZE / MAG_ZOOM);
-  const sx = clamp(Math.floor(x - size / 2), 0, mainCanvas.width - size);
-  const sy = clamp(Math.floor(y - size / 2), 0, mainCanvas.height - size);
+  const sx = clamp(Math.floor(x - size / 2), 0, sourceCanvas.width - size);
+  const sy = clamp(Math.floor(y - size / 2), 0, sourceCanvas.height - size);
 
   magCtx.imageSmoothingEnabled = false;
   magCtx.clearRect(0, 0, MAG_SIZE, MAG_SIZE);
   magCtx.drawImage(
-    mainCanvas,
+    sourceCanvas,
     sx,
     sy,
     size,
@@ -351,10 +406,10 @@ function renderMagnifier(x, y) {
 }
 
 function sampleAverageColor(x, y, radius) {
-  const startX = clamp(x - radius, 0, mainCanvas.width - 1);
-  const startY = clamp(y - radius, 0, mainCanvas.height - 1);
+  const startX = clamp(x - radius, 0, sourceCanvas.width - 1);
+  const startY = clamp(y - radius, 0, sourceCanvas.height - 1);
   const size = radius * 2 + 1;
-  const data = mainCtx.getImageData(startX, startY, size, size).data;
+  const data = sourceCtx.getImageData(startX, startY, size, size).data;
   let r = 0;
   let g = 0;
   let b = 0;
@@ -372,9 +427,128 @@ function getCanvasPos(event) {
   const scaleX = mainCanvas.width / rect.width;
   const scaleY = mainCanvas.height / rect.height;
   return {
-    x: Math.floor((event.clientX - rect.left) * scaleX),
-    y: Math.floor((event.clientY - rect.top) * scaleY),
+    x: (event.clientX - rect.left) * scaleX,
+    y: (event.clientY - rect.top) * scaleY,
   };
+}
+
+function getImagePos(event) {
+  const canvasPos = getCanvasPos(event);
+  const rawX = (canvasPos.x - viewState.panX) / viewState.zoom;
+  const rawY = (canvasPos.y - viewState.panY) / viewState.zoom;
+  return {
+    x: clamp(Math.floor(rawX), 0, sourceCanvas.width - 1),
+    y: clamp(Math.floor(rawY), 0, sourceCanvas.height - 1),
+    canvasX: canvasPos.x,
+    canvasY: canvasPos.y,
+  };
+}
+
+function renderMainCanvas() {
+  if (!currentImage) return;
+  mainCtx.imageSmoothingEnabled = false;
+  mainCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+  mainCtx.drawImage(
+    sourceCanvas,
+    0,
+    0,
+    sourceCanvas.width,
+    sourceCanvas.height,
+    viewState.panX,
+    viewState.panY,
+    sourceCanvas.width * viewState.zoom,
+    sourceCanvas.height * viewState.zoom
+  );
+}
+
+function clampPan() {
+  const scaledW = sourceCanvas.width * viewState.zoom;
+  const scaledH = sourceCanvas.height * viewState.zoom;
+  const minX = Math.min(0, mainCanvas.width - scaledW);
+  const minY = Math.min(0, mainCanvas.height - scaledH);
+  viewState.panX = clamp(viewState.panX, minX, 0);
+  viewState.panY = clamp(viewState.panY, minY, 0);
+}
+
+function updateZoomControls() {
+  if (zoomRange) zoomRange.value = viewState.zoom;
+  if (zoomValue) zoomValue.textContent = `${Math.round(viewState.zoom * 100)}%`;
+}
+
+function setZoom(value, anchorX, anchorY) {
+  const nextZoom = clamp(value, MIN_ZOOM, MAX_ZOOM);
+  if (nextZoom === viewState.zoom) return;
+  const imageX = (anchorX - viewState.panX) / viewState.zoom;
+  const imageY = (anchorY - viewState.panY) / viewState.zoom;
+  viewState.zoom = nextZoom;
+  viewState.panX = anchorX - imageX * nextZoom;
+  viewState.panY = anchorY - imageY * nextZoom;
+  clampPan();
+  updateZoomControls();
+  renderMainCanvas();
+}
+
+function adjustZoom(delta) {
+  if (!currentImage) return;
+  setZoom(viewState.zoom + delta, mainCanvas.width / 2, mainCanvas.height / 2);
+}
+
+function resetView() {
+  viewState.zoom = 1;
+  viewState.panX = 0;
+  viewState.panY = 0;
+  viewState.isPanning = false;
+  viewState.wasDragging = false;
+  updateZoomControls();
+  renderMainCanvas();
+}
+
+function startPanning(event) {
+  if (!currentImage) return;
+  const pos = getCanvasPos(event);
+  viewState.isPanning = true;
+  viewState.dragStart = {
+    x: pos.x,
+    y: pos.y,
+    panX: viewState.panX,
+    panY: viewState.panY,
+  };
+  viewState.wasDragging = false;
+  mainCanvas.classList.add("is-panning");
+}
+
+function stopPanning() {
+  if (!viewState.isPanning) return;
+  viewState.isPanning = false;
+  viewState.dragStart = null;
+  mainCanvas.classList.remove("is-panning");
+}
+
+function handleCanvasMove(event) {
+  if (!currentImage) return;
+  if (viewState.isPanning && viewState.dragStart) {
+    const pos = getCanvasPos(event);
+    const dx = pos.x - viewState.dragStart.x;
+    const dy = pos.y - viewState.dragStart.y;
+    if (Math.abs(dx) + Math.abs(dy) > 2) {
+      viewState.wasDragging = true;
+    }
+    viewState.panX = viewState.dragStart.panX + dx;
+    viewState.panY = viewState.dragStart.panY + dy;
+    clampPan();
+    renderMainCanvas();
+  }
+
+  const pos = getImagePos(event);
+  renderMagnifier(pos.x, pos.y);
+}
+
+function handleCanvasZoom(event) {
+  if (!currentImage) return;
+  event.preventDefault();
+  const pos = getCanvasPos(event);
+  const direction = event.deltaY < 0 ? 1 : -1;
+  setZoom(viewState.zoom + direction * ZOOM_STEP, pos.x, pos.y);
 }
 
 function rgbToHex([r, g, b]) {
