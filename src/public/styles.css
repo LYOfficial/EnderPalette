@@ -152,15 +152,15 @@ body {
 }
 
 .pixel-block--void {
-  background: linear-gradient(135deg, #0b0a12, #1a1627);
+  background: linear-gradient(135deg, #5f656a, #3f4448);
 }
 
 .pixel-block--endstone {
-  background: linear-gradient(135deg, #ded8b2, #c8c19c);
+  background: linear-gradient(135deg, #f3e9b8, #dccd86);
 }
 
 .pixel-block--purpur {
-  background: linear-gradient(135deg, #9c6bd6, #b08be3);
+  background: linear-gradient(135deg, #3c1b59, #231034);
 }
 
 .status {
@@ -176,7 +176,6 @@ body {
 
 .theme-button {
   padding: 0;
-  background: transparent;
   cursor: pointer;
 }
 
