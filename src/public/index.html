@@ -23,103 +23,122 @@
             <h1>EnderPalette</h1>
             <p data-i18n="tagline">末地调色盘 · Minecraft 图像调色盘分析器</p>
           </div>
-          <div class="block-row" aria-hidden="true">
-            <span class="pixel-block pixel-block--void"></span>
-            <span class="pixel-block pixel-block--endstone"></span>
-            <span class="pixel-block pixel-block--purpur"></span>
-          </div>
-          <div class="status">
-            <div class="badge" data-i18n="badgeDrag">拖拽上传</div>
-            <div class="badge" data-i18n="badgeSample">点击取色</div>
+          <div class="status theme-switcher" aria-label="主题切换">
             <button
-              id="langToggle"
-              class="mc-button mc-button--ghost"
+              class="theme-button pixel-block pixel-block--void"
               type="button"
-              data-i18n="langToggle"
-            >
-              切换语言
-            </button>
+              data-theme="obsidian"
+              aria-label="黑曜石主题"
+            ></button>
+            <button
+              class="theme-button pixel-block pixel-block--endstone"
+              type="button"
+              data-theme="endstone"
+              aria-label="末地石主题"
+            ></button>
+            <button
+              class="theme-button pixel-block pixel-block--purpur"
+              type="button"
+              data-theme="ender"
+              aria-label="末影紫主题"
+            ></button>
           </div>
         </header>
 
         <section class="workspace">
-          <div class="panel upload-panel">
-            <div id="dropZone" class="drop-zone">
-              <div class="drop-inner">
-                <h2 data-i18n="uploadTitle">上传图片</h2>
-                <p data-i18n="uploadDesc">把图片拖到这里，或点击选择。</p>
-                <button id="pickBtn" class="mc-button" data-i18n="chooseFile">
-                  选择文件
-                </button>
-                <input id="fileInput" type="file" accept="image/*" hidden />
-              </div>
-            </div>
-            <div class="canvas-wrap">
-              <canvas id="mainCanvas" width="960" height="540"></canvas>
-              <canvas id="magnifier" width="140" height="140"></canvas>
-            </div>
-            <div class="zoom-controls">
-              <button
-                id="zoomOutBtn"
-                class="mc-button mc-button--ghost"
-                type="button"
-                data-i18n="zoomOut"
-              >
-                缩小
-              </button>
-              <input
-                id="zoomRange"
-                class="zoom-range"
-                type="range"
-                min="1"
-                max="8"
-                step="0.25"
-                value="1"
-              />
-              <button
-                id="zoomInBtn"
-                class="mc-button mc-button--ghost"
-                type="button"
-                data-i18n="zoomIn"
-              >
-                放大
-              </button>
-              <button
-                id="zoomResetBtn"
-                class="mc-button mc-button--ghost"
-                type="button"
-                data-i18n="zoomReset"
-              >
-                重置
-              </button>
-              <div class="zoom-readout">
-                <span data-i18n="zoomLabel">缩放</span>
-                <span id="zoomValue">100%</span>
-              </div>
-            </div>
-            <div class="hint" data-i18n="hint">点击画面任意位置分析颜色块。</div>
-          </div>
-
-          <div class="panel analysis-panel">
-            <div class="section">
-              <h3 data-i18n="inspector">取色器</h3>
-              <div class="inspector">
-                <div id="inspectSwatch" class="swatch"></div>
-                <div class="inspect-info">
-                  <div id="inspectHex" class="mono">#000000</div>
-                  <div id="inspectBlock" class="label" data-i18n="noMatch">暂无匹配</div>
+          <div class="column column-left">
+            <div class="panel upload-panel">
+              <div id="dropZone" class="drop-zone">
+                <div class="drop-inner">
+                  <h2 data-i18n="uploadTitle">上传图片</h2>
+                  <p data-i18n="uploadDesc">把图片拖到这里，或点击选择。</p>
+                  <button id="pickBtn" class="mc-button" data-i18n="chooseFile">
+                    选择文件
+                  </button>
+                  <input id="fileInput" type="file" accept="image/*" hidden />
                 </div>
               </div>
             </div>
 
-            <div class="section">
-              <h3 data-i18n="edgeLines">边缘线条</h3>
-              <canvas id="edgeCanvas" width="320" height="180"></canvas>
+            <div class="panel preview-panel">
+              <div class="section">
+                <h3 data-i18n="badgeSample">点击取色</h3>
+                <div class="canvas-wrap">
+                  <canvas id="mainCanvas" width="960" height="540"></canvas>
+                  <canvas id="magnifier" width="140" height="140"></canvas>
+                </div>
+                <div class="zoom-controls">
+                  <button
+                    id="zoomOutBtn"
+                    class="mc-button mc-button--ghost"
+                    type="button"
+                    data-i18n="zoomOut"
+                  >
+                    缩小
+                  </button>
+                  <input
+                    id="zoomRange"
+                    class="zoom-range"
+                    type="range"
+                    min="1"
+                    max="8"
+                    step="0.25"
+                    value="1"
+                  />
+                  <button
+                    id="zoomInBtn"
+                    class="mc-button mc-button--ghost"
+                    type="button"
+                    data-i18n="zoomIn"
+                  >
+                    放大
+                  </button>
+                  <button
+                    id="zoomResetBtn"
+                    class="mc-button mc-button--ghost"
+                    type="button"
+                    data-i18n="zoomReset"
+                  >
+                    重置
+                  </button>
+                  <div class="zoom-readout">
+                    <span data-i18n="zoomLabel">缩放</span>
+                    <span id="zoomValue">100%</span>
+                  </div>
+                </div>
+                <div class="hint" data-i18n="hint">点击画面任意位置分析颜色块。</div>
+              </div>
             </div>
 
-            <div class="section">
-              <h3 data-i18n="blockMatches">方块匹配</h3>
-              <div id="matches" class="matches"></div>
+            <div class="panel inspector-panel">
+              <div class="section">
+                <h3 data-i18n="inspector">取色器</h3>
+                <div class="inspector">
+                  <div id="inspectSwatch" class="swatch"></div>
+                  <div class="inspect-info">
+                    <div id="inspectHex" class="mono">#000000</div>
+                    <div id="inspectBlock" class="label" data-i18n="noMatch">暂无匹配</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column column-right">
+            <div class="panel edges-panel">
+              <div class="section">
+                <h3 data-i18n="edgeLines">边缘线条</h3>
+                <div class="edge-frame">
+                  <canvas id="edgeCanvas" width="320" height="180"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel matches-panel">
+              <div class="section">
+                <h3 data-i18n="blockMatches">方块匹配</h3>
+                <div id="matches" class="matches"></div>
+              </div>
             </div>
           </div>
         </section>

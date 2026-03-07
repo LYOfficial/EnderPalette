@@ -13,6 +13,45 @@
   --pixel-border: #0f0e16;
 }
 
+:root.theme-obsidian {
+  --end-void: #0a0a0f;
+  --end-obsidian: #15131d;
+  --end-obsidian-2: #1f1b2b;
+  --end-stone: #c9c4a1;
+  --end-purple: #7c6aa5;
+  --end-green: #5ee2c8;
+  --end-green-deep: #2a9f88;
+  --end-glow: rgba(94, 226, 200, 0.35);
+  --text: #f2eef9;
+  --muted: #bbb4c9;
+}
+
+:root.theme-endstone {
+  --end-void: #14141a;
+  --end-obsidian: #2b2a33;
+  --end-obsidian-2: #3a3944;
+  --end-stone: #f2f1e7;
+  --end-purple: #b9a6d9;
+  --end-green: #88f0d2;
+  --end-green-deep: #4fb99c;
+  --end-glow: rgba(230, 230, 220, 0.35);
+  --text: #f7f6f0;
+  --muted: #d0ccc2;
+}
+
+:root.theme-ender {
+  --end-void: #0a0a0f;
+  --end-obsidian: #171222;
+  --end-obsidian-2: #281c38;
+  --end-stone: #e6dfb8;
+  --end-purple: #c39bff;
+  --end-green: #67f1c8;
+  --end-green-deep: #2aa38b;
+  --end-glow: rgba(195, 155, 255, 0.45);
+  --text: #f7f2ff;
+  --muted: #cbbfe6;
+}
+
 @font-face {
   font-family: "Minecraft Seven";
   src: url("/font/Minecraft_Seven.ttf") format("truetype");
@@ -104,12 +143,6 @@ body {
   font-size: 12px;
 }
 
-.block-row {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
 .pixel-block {
   width: 32px;
   height: 32px;
@@ -137,6 +170,21 @@ body {
   justify-content: flex-end;
 }
 
+.theme-switcher {
+  align-items: center;
+}
+
+.theme-button {
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-button.is-active {
+  border-color: var(--end-green);
+  box-shadow: inset 0 0 0 2px rgba(103, 241, 200, 0.2), 2px 2px 0 #000;
+}
+
 .badge {
   padding: 6px 12px;
   background: #2a2536;
@@ -148,8 +196,15 @@ body {
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.85fr);
   gap: 20px;
+  align-items: stretch;
+}
+
+.column {
+  display: grid;
+  gap: 20px;
+  align-content: start;
 }
 
 .panel {
@@ -158,6 +213,8 @@ body {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08), 6px 6px 0 var(--end-shadow);
   padding: 18px;
   position: relative;
+  height: fit-content;
+  align-self: start;
 }
 
 .panel::after {
@@ -235,11 +292,12 @@ body {
   background: #0b0a12;
   box-shadow: inset 0 0 0 2px rgba(103, 241, 200, 0.15);
   overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 #mainCanvas {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   cursor: grab;
 }
@@ -325,15 +383,36 @@ body {
 
 #edgeCanvas {
   width: 100%;
-  height: auto;
+  height: 100%;
   border: 3px solid #000;
   background: #0b0a0f;
   box-shadow: inset 0 0 0 2px rgba(103, 241, 200, 0.1);
 }
 
+.edge-frame {
+  border: 3px solid #000;
+  background: #0b0a0f;
+  box-shadow: inset 0 0 0 2px rgba(103, 241, 200, 0.1);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.edge-frame #edgeCanvas {
+  border: none;
+  box-shadow: none;
+}
+
 .matches {
   display: grid;
   gap: 10px;
+}
+
+.match-empty {
+  padding: 12px;
+  border: 3px solid #000;
+  background: #1b1726;
+  color: var(--muted);
+  text-align: center;
 }
 
 .match-item {

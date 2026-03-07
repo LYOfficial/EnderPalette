@@ -15,6 +15,7 @@ const inspectHex = document.getElementById("inspectHex");
 const inspectBlock = document.getElementById("inspectBlock");
 const langToggle = document.getElementById("langToggle");
 const i18nNodes = document.querySelectorAll("[data-i18n]");
+const themeButtons = document.querySelectorAll(".theme-button");
 
 const mainCtx = mainCanvas.getContext("2d", { willReadFrequently: true });
 const edgeCtx = edgeCanvas.getContext("2d");
@@ -76,6 +77,10 @@ const MAG_ZOOM = 6;
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 8;
 const ZOOM_STEP = 0.25;
+const MATCH_LIMIT = 5;
+const MAX_DELTAE = 100;
+
+const THEMES = ["obsidian", "endstone", "ender"];
 
 const viewState = {
   zoom: 1,
@@ -90,6 +95,7 @@ init();
 
 function init() {
   initLanguage();
+  initTheme();
 
   fetch("blocks.json")
     .then((res) => res.json())
@@ -172,6 +178,33 @@ function init() {
   }
 }
 
+function initTheme() {
+  const saved = localStorage.getItem("enderpalette.theme");
+  const initial = THEMES.includes(saved) ? saved : "ender";
+  applyTheme(initial);
+
+  themeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const theme = button.dataset.theme;
+      if (!THEMES.includes(theme)) return;
+      localStorage.setItem("enderpalette.theme", theme);
+      applyTheme(theme);
+    });
+  });
+}
+
+function applyTheme(theme) {
+  document.documentElement.classList.remove(
+    "theme-obsidian",
+    "theme-endstone",
+    "theme-ender"
+  );
+  document.documentElement.classList.add(`theme-${theme}`);
+  themeButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.theme === theme);
+  });
+}
+
 function handleFiles(files) {
   const file = files && files[0];
   if (!file) return;
@@ -210,8 +243,13 @@ function drawToCanvas(img) {
 function analyzeImage() {
   const imageData = sourceCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
   renderEdges(imageData);
-  lastResults = analyzeBlocks(imageData);
-  renderMatches(lastResults);
+  if (lastSampleColor) {
+    lastResults = getClosestBlocks(lastSampleColor, MATCH_LIMIT);
+    renderMatches(lastResults);
+  } else {
+    lastResults = [];
+    renderMatches(lastResults);
+  }
 }
 
 function renderEdges(imageData) {
@@ -262,53 +300,23 @@ function renderEdges(imageData) {
   edgeCtx.putImageData(edgeImage, 0, 0);
 }
 
-function analyzeBlocks(imageData) {
-  if (!blockCache.length) return [];
-  const { width, height, data } = imageData;
-  const total = width * height;
-  const stats = blockCache.map(() => ({ count: 0, sum: [0, 0, 0] }));
-
-  for (let i = 0; i < data.length; i += 4) {
-    const color = [data[i], data[i + 1], data[i + 2]];
-    const colorLab = rgbToLab(color);
-    const idx = nearestBlockIndexLab(colorLab);
-    const entry = stats[idx];
-    entry.count += 1;
-    entry.sum[0] += color[0];
-    entry.sum[1] += color[1];
-    entry.sum[2] += color[2];
-  }
-
-  return stats
-    .map((entry, idx) => {
-      if (!entry.count) return null;
-      return {
-        block: blockCache[idx].block,
-        imageUrls: blockCache[idx].imageUrls,
-        count: entry.count,
-        percent: entry.count / total,
-        avgColor: [
-          Math.round(entry.sum[0] / entry.count),
-          Math.round(entry.sum[1] / entry.count),
-          Math.round(entry.sum[2] / entry.count),
-        ],
-      };
-    })
-    .filter(Boolean)
-    .sort((a, b) => b.count - a.count);
-}
-
 function renderMatches(results) {
   matchesEl.innerHTML = "";
+  if (!results.length) {
+    const empty = document.createElement("div");
+    empty.className = "match-empty";
+    empty.textContent = t("noMatch");
+    matchesEl.appendChild(empty);
+    return;
+  }
   results.forEach((result) => {
     const name = getBlockName(result.block);
-    const hex = rgbToHex(result.avgColor);
     const row = document.createElement("div");
     row.className = "match-item";
 
     const swatch = document.createElement("div");
     swatch.className = "swatch";
-    swatch.style.background = hex;
+    swatch.style.background = result.block.hex;
 
     const img = document.createElement("img");
     img.className = "block-img";
@@ -327,7 +335,7 @@ function renderMatches(results) {
 
     const percent = document.createElement("div");
     percent.className = "score";
-    percent.textContent = `${(result.percent * 100).toFixed(2)}%`;
+    percent.textContent = `${result.similarity.toFixed(1)}%`;
 
     row.appendChild(swatch);
     row.appendChild(img);
@@ -339,41 +347,35 @@ function renderMatches(results) {
 
 function updateInspector(color) {
   const hex = rgbToHex(color);
-  const match = findClosestBlock(color);
+  const matches = getClosestBlocks(color, MATCH_LIMIT);
+  const match = matches[0]?.block || null;
   lastSampleColor = color;
+  lastResults = matches;
   inspectSwatch.style.background = hex;
   inspectHex.textContent = hex;
   inspectBlock.textContent = match
     ? `${getBlockName(match)} (${match.id})`
     : t("noMatch");
+  renderMatches(matches);
 }
 
-function findClosestBlock(color) {
-  if (!blockCache.length) return null;
+function getClosestBlocks(color, limit = MATCH_LIMIT) {
+  if (!blockCache.length) return [];
   const colorLab = rgbToLab(color);
-  let best = null;
-  let bestDist = Number.POSITIVE_INFINITY;
-  for (const entry of blockCache) {
-    const dist = deltaE(colorLab, entry.lab);
-    if (dist < bestDist) {
-      bestDist = dist;
-      best = { ...entry.block, distance: dist };
-    }
-  }
-  return best;
-}
-
-function nearestBlockIndexLab(colorLab) {
-  let best = 0;
-  let bestDist = Number.POSITIVE_INFINITY;
-  for (let i = 0; i < blockCache.length; i += 1) {
-    const dist = deltaE(colorLab, blockCache[i].lab);
-    if (dist < bestDist) {
-      bestDist = dist;
-      best = i;
-    }
-  }
-  return best;
+  return blockCache
+    .map((entry) => {
+      const dist = deltaE(colorLab, entry.lab);
+      const clamped = clamp(dist, 0, MAX_DELTAE);
+      const similarity = (1 - clamped / MAX_DELTAE) * 100;
+      return {
+        block: entry.block,
+        imageUrls: entry.imageUrls,
+        distance: dist,
+        similarity: Math.max(0, similarity),
+      };
+    })
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit);
 }
 
 function renderMagnifier(x, y) {
@@ -663,6 +665,11 @@ function buildBlockImageCandidates(block) {
     candidates.push(buildBlockImageUrl(block.image));
   }
 
+  const spriteName = buildBlockSpriteName(block);
+  if (spriteName) {
+    candidates.push(buildBlockImageUrl(`BlockSprite ${spriteName}.png`));
+  }
+
   const fromName = normalizeFileName(block.name);
   if (fromName) {
     candidates.push(buildBlockImageUrl(fromName));
@@ -675,6 +682,18 @@ function buildBlockImageCandidates(block) {
 
   candidates.push("block-textures/placeholder.svg");
   return Array.from(new Set(candidates));
+}
+
+function buildBlockSpriteName(block) {
+  if (!block || !block.id) return "";
+  const overrides = {
+    iron_block: "block-of-iron",
+    gold_block: "block-of-gold",
+    diamond_block: "block-of-diamond",
+    emerald_block: "block-of-emerald",
+    quartz_block: "block-of-quartz",
+  };
+  return overrides[block.id] || block.id.replace(/_/g, "-");
 }
 
 function normalizeFileName(value) {
