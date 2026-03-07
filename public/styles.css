@@ -121,6 +121,39 @@ body {
   z-index: 1;
 }
 
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  color: #0f0e16;
+}
+
+.github-corner svg {
+  fill: var(--end-green);
+  color: #0f0e16;
+  display: block;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20%,
+  60% {
+    transform: rotate(-24deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -450,5 +483,10 @@ body {
 
   .status {
     justify-content: flex-start;
+  }
+
+  .github-corner svg {
+    width: 66px;
+    height: 66px;
   }
 }
