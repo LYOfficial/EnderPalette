@@ -45,7 +45,15 @@ npm install
 npm run start
 ```
 
-启动后访问：`http://localhost:5173`
+启动后访问：`http://localhost:4999`
+
+## Docker 部署
+
+```bash
+docker compose up -d --build
+```
+
+启动后访问：`http://localhost:4999`。
 
 ## 项目结构
 
